@@ -1,0 +1,31 @@
+.footer {
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    min-height: 100%; /* Ensure the body is at least the height of the viewport */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .footer-links a {
+    color: #61dafb;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  

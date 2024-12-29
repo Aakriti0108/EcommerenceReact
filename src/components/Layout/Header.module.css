@@ -1,0 +1,21 @@
+.navItem {
+    color: rgb(228, 223, 217);
+    border-radius: 5px;
+    justify-content: center;
+    margin: auto;
+  }
+  
+  .navFoy {
+         display: flex;
+         margin: auto;
+         gap: 100px;/* Adjust the spacing between items */
+  }
+  
+  .header {
+       position: relative; /* Keep it within normal flow but layered */
+       z-index: 1000; /* Lower than OpenCart's z-index */
+     }
+     
+
+     
+  

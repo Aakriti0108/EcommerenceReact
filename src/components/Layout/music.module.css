@@ -1,0 +1,4 @@
+.musicDisplay{
+    display: flex;
+    justify-content: space-between;
+  }
