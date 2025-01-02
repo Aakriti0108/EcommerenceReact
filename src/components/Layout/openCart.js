@@ -8,12 +8,11 @@ const OpenCart = (props)=>{
 
    return (
           <Container  style={{
-            background: 'white',
-            width: '500px', // Adjust width
-            height: '700px', // Adjust height
+            background: 'lightblue',
+            width: '500px',  // Adjust height
             top: '7%',
             right: '0%', // Adjust positioning
-            position: 'fixed',
+            position: 'absolute',
             boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Add shadow for better aesthetics
             borderRadius: '10px', // Optional rounded corners
             overflow: 'hidden', // Prevent overflow issues

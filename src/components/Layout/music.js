@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button,Card,Container,Row,Col } from "react-bootstrap";
 import classes from './music.module.css';
+import CartContext from "../../store/cart-content";
 
-let music = ()=> {
+let Music = ()=> {
+  let { addToCart } = useContext(CartContext);
+
+ 
 
     
   const productsArr = [
 
     {
+      id:1,
     
     title: 'Colors',
     
@@ -18,6 +23,7 @@ let music = ()=> {
     },
     
     {
+      id:2,
     
     title: 'Black and white Colors',
     
@@ -28,6 +34,7 @@ let music = ()=> {
     },
     
     {
+      id:3,
     
     title: 'Yellow and Black Colors',
     
@@ -38,6 +45,7 @@ let music = ()=> {
     },
     
     {
+      id:4,
     
     title: 'Blue Color',
     
@@ -63,7 +71,7 @@ let music = ()=> {
                 <span>${products.price}</span>
                 <Button variant="primary" style={{ // Pushes the button to the bottom
                       marginLeft: "95px", // Aligns the button to the right
-                    }} >ADD TO CART</Button>
+                    }} onClick={() => addToCart(products)}>ADD TO CART</Button>
                 </div>
                
               </div>
@@ -83,4 +91,4 @@ let music = ()=> {
      )
 }
 
-export default music
+export default Music

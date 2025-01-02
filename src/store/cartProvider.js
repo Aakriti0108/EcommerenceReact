@@ -51,8 +51,11 @@ const CartProvider = (props)=>{
         console.log('remove',id,updatedUser);
     }
     
+    let addToCart = (item) => {
+      setCartItem((prevCart) => [...prevCart, item]);
+    };
    
    
-    return <CartContext.Provider value={{cartItem,removeCart}}>{props.children}</CartContext.Provider>
+    return <CartContext.Provider value={{cartItem,addToCart,removeCart}}>{props.children}</CartContext.Provider>
 }
 export default CartProvider
