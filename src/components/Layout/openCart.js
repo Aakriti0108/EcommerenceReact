@@ -1,14 +1,16 @@
-import React from "react";
-import classes from './openCart.module.css';
+import React, { useContext } from "react";
 import { Card, Container,Row,Col, Button } from "react-bootstrap";
+import CartContext from "../../store/cart-content";
 
-const openCart = (props)=>{
-  
+const OpenCart = (props)=>{
+  let { cartItem, removeCart } = useContext(CartContext);
+  console.log(removeCart,'data')
+
    return (
           <Container  style={{
             background: 'white',
-            width: '300px', // Adjust width
-            height: '400px', // Adjust height
+            width: '500px', // Adjust width
+            height: '700px', // Adjust height
             top: '7%',
             right: '0%', // Adjust positioning
             position: 'fixed',
@@ -23,40 +25,64 @@ const openCart = (props)=>{
                  </div>
                  </div>
                  <div>
-                    <Row>
-                    <Col xs={4} md={5}>
-                    <span  style={{
-                     marginRight: '20px',
-                     textDecoration: 'underline',
-                     textUnderlineOffset: '4px',
-                   }}>price</span>
-                    <span  style={{
-                     marginRight: '20px',
-                     textDecoration: 'underline',
-                     textUnderlineOffset: '4px',
-                   }}>quantity</span>
-                    <span  style={{
-                     marginRight: '20px',
-                     textDecoration: 'underline',
-                     textUnderlineOffset: '4px',
-                   }}>item</span>
-                    </Col>
-                    </Row>
+                 
+                 <Row>
+                 <Col xs={4} md={5}>
+                 <div style={{display:'flex',padding: '20px',textAlign:"center"}}>
+                 <span  style={{
+                   marginRight: '100px',
+                   textDecoration: 'underline',
+                   textUnderlineOffset: '4px',
+                   fontSize:'20px',fontWeight:'bold'
+                 }}>Price</span>
+                  <span  style={{
+                   marginRight: '100px',
+                   textDecoration: 'underline',
+                   textUnderlineOffset: '4px',
+                   fontSize:'20px',fontWeight:'bold'
+                 }}>Quantity</span>
+                  <span  style={{
+                   marginRight: '100px',
+                   textDecoration: 'underline',
+                   textUnderlineOffset: '4px',
+                   fontSize:'20px',fontWeight:'bold'
+                 }}>Item</span>
+                 </div>
+                
+                 </Col>
+                 </Row>
+                 
+                 
                  </div>
                  <div>
-                    <Row  >
-                    <Col xs={4} md={5}>
-                    <span  style={{
-                     marginRight: '35px'
-                   }}>${50.00}</span>
-                    <span  style={{
-                     marginRight: '35px'
-                   }}>2</span>
-                    <span  style={{
-                     marginRight: '45px'
-                   }} >Chips</span>
+                 <ul >
+                 <Row >
+                 {cartItem.map((cart)=>(
+                    <Col xs={8} key={cart.id}>
+                    
+                    <div style={{display:'flex',padding: '20px',textAlign:"center"}}>
+                    <Card.Img style={{height:'30%',width:'30%',margin:'auto'}} src={cart.imageUrl} />
+                    <span style={{display:'flex',margin:'auto'}}>{cart.title}</span>
+                    <div style={{display:'flex',margin:'auto',padding: '40px'}}>
+                    <span>${cart.price}</span>
+                    </div>
+                    <div style={{display:'flex',padding: '40px', gap: '20px'}}>
+                    <input type="number" defaultValue='1' style={{height:'30px',width:'30px'}}></input>
+                    <Button style={{height:'30px',width:'80px'}} onClick={() => removeCart(cart.id)}>Remove</Button>
+                   
+                    
+                    </div>
+                    
+                    </div>
+                  
                     </Col>
-                    </Row>
+                  ))
+                  
+                }
+                
+                </Row>
+                 </ul>
+                   
                  </div>
                  <div style={{textAlign: 'right'}}>
                     <span>Total</span>
@@ -71,4 +97,4 @@ const openCart = (props)=>{
    )
 }
 
-export default openCart
+export default OpenCart

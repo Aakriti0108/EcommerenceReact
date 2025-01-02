@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './App.css';
 import Header from './components/Layout/Header';
+import CartProvider from './store/cartProvider';
 
 
 
 function App() {
   
      return(
-          <React.Fragment>
-            <Header></Header>
-          </React.Fragment>
+          
+           <CartProvider>
+           <Header></Header>
+           </CartProvider>
         )
 }
 
