@@ -7,6 +7,7 @@ import CartProvider from './store/cartProvider';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CartProvider>

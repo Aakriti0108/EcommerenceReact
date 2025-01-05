@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import { Navbar, Container ,Card, Button} from "react-bootstrap";
+import { Navbar, Container , Button} from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import classes from './Header.module.css';
 import Footer from "./footer";
 import Music from "./music";
 import OpenCart from './openCart';
+
 
 const Header = (props) => {
   let [cartIsShown,setCartIsShown] = useState(false);
@@ -22,8 +24,8 @@ const Header = (props) => {
         <Container className={classes.navItem}>
           <div className={classes.navFoy}>
           <h4  className={classes.navFoy}>Home</h4>
-          <h4 className={classes.navF0oy}>Store</h4>
-          <h4 className={classes.navFoy}>About</h4>
+          <Link to='/' style={{color:'white'}}> <h4 className={classes.navF0oy} >Store</h4></Link>
+          <Link to='/about' style={{color:'white'}}> <h4 className={classes.navF0oy}>About</h4></Link>
           </div>
         </Container>
         <div>
